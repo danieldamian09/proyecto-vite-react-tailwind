@@ -1,8 +1,11 @@
-function Header(){
+import React from 'react'
 
-  return(
-    <h1>Desde Header</h1>
+const header = () => {
+  return (
+    <div>
+      
+    </div>
   )
 }
 
-export default Header;
+export default header;
