@@ -1,7 +1,7 @@
 
 const Formulario = () => {
   return (
-    <div>
+    <div className="bg">
       <h2>Formulario</h2>
     </div>
   )
