@@ -1,5 +1,11 @@
+import { useState, useEffect } from 'react';
 
 const Formulario = () => {
+
+  const [nombre, setNombre] = useState('');
+
+  console.log(nombre)
+
   return (
     <div className="md:w-1/2 lg:w-2/5">
       <h2 className="font-black text-3xl text-center">Seguimientos de Pacientes</h2>
@@ -19,6 +25,8 @@ const Formulario = () => {
             name="mascota" 
             id="mascota"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
+            value={nombre}
+            onChange={ (e) => setNombre(e.target.value)}
           />
 
         </div>
@@ -31,6 +39,7 @@ const Formulario = () => {
             name="propietario" 
             id="propietario"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
+            // value={propietario}
           />
 
         </div>
@@ -43,6 +52,7 @@ const Formulario = () => {
             name="email" 
             id="email"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
+            // value={email}
           />
 
         </div>
@@ -53,7 +63,8 @@ const Formulario = () => {
             type="date"
             name="alta" 
             id="alta"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            // value={alta}
           />
 
         </div>
@@ -64,6 +75,7 @@ const Formulario = () => {
             id="sintomas"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" 
             placeholder="Describe los Síntomas"
+            // value={sintomas}
           />
         </div>
 
