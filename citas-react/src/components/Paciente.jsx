@@ -1,27 +1,31 @@
 const Paciente = () => {
-  return (
-    <div className=" mx-5 my-10 bg-white shadow-md px-5 py-10 rounded-xl">
-        <p className=" font-bold mb-3 text-gray-700 uppercase">Nombre: {' '}
-            <span className=" font-normal normal-case">Hook</span>
+
+    
+
+    return (
+        <div className=" mx-5 my-10 bg-white shadow-md px-5 py-10 rounded-xl">
+        <p className=" font-bold mb-3 text-gray-700 uppercase">
+        Nombre: <span className=" font-normal normal-case">nombre</span>
         </p>
 
-        <p className=" font-bold mb-3 text-gray-700 uppercase">Propietario: {' '}
-            <span className=" font-normal normal-case">Humberto</span>
+        <p className=" font-bold mb-3 text-gray-700 uppercase">
+        Propietario:{" "}
+        <span className=" font-normal normal-case">propietario</span>
         </p>
 
-        <p className=" font-bold mb-3 text-gray-700 uppercase">Email: {' '}
-            <span className=" font-normal normal-case">humbertorivero9@gmail.com</span>
+        <p className=" font-bold mb-3 text-gray-700 uppercase">
+        Email: <span className=" font-normal normal-case">email</span>
         </p>
 
-        <p className=" font-bold mb-3 text-gray-700 uppercase">Fecha Alta: {' '}
-            <span className=" font-normal normal-case">10 de Diciembre de 2022</span>
+        <p className=" font-bold mb-3 text-gray-700 uppercase">
+        Fecha Alta: <span className=" font-normal normal-case">alta</span>
         </p>
 
-        <p className=" font-bold mb-3 text-gray-700 uppercase">Síntomas: {' '}
-            <span className=" font-normal normal-case">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum molestias sed quas quod, laboriosam ad cumque impedit quaerat in quos! Ullam, ducimus fuga. Ex accusantium harum ad veniam eaque provident.</span>
+        <p className=" font-bold mb-3 text-gray-700 uppercase">
+        Síntomas: <span className=" font-normal normal-case">sintomas</span>
         </p>
-      </div>
-  )
-}
+        </div>
+    );
+};
 
-export default Paciente
+export default Paciente;
