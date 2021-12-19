@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Formulario = ({setPacientes}) => {
+const Formulario = ({setPacientes, pacientes}) => {
 
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
@@ -21,7 +21,24 @@ const Formulario = ({setPacientes}) => {
 
     setError(false);
 
-    setPacientes([ nombre, propietario, email, alta, sintomas ])
+    // Crear Objeto Pacientes para guardarlo en el state del componente APP
+    const objetoPaciente = {
+      nombre,
+      propietario,
+      email,
+      alta,
+      sintomas
+    }
+
+    // !Antes de gurdar nuestro Objeto en el state de APP tenemos que hacer una copia con el Spread Operator, de lo que ya esta en el estado
+    setPacientes([...pacientes, objetoPaciente])
+
+    // Reiniciar el Formulario
+    setNombre('');
+    setPropietario('');
+    setEmail('');
+    setAlta('');
+    setSintomas('');
 
   }
 
