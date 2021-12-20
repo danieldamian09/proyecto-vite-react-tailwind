@@ -7,11 +7,11 @@ function App() {
 
   const [pacientes, setPacientes] = useState([]);
 
-  console.log(pacientes)
+  // console.log(pacientes)
 
   return (
     <div className="container mx-auto mt-20">
-      
+
       <Header />
       <div className="mt-12 md:flex">
 
