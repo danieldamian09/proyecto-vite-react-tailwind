@@ -1,4 +1,4 @@
-const Paciente = () => {
+const Paciente = ({paciente}) => {
 
     
 
