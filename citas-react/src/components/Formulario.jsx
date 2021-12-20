@@ -11,6 +11,15 @@ const Formulario = ({setPacientes, pacientes}) => {
   // Estado para el error del formulario
   const [error, setError] = useState(false)
 
+
+  // Funcion para generar un ID
+  const generarID = () => {
+    const random = Math.random().toString(36).substr(2);
+    const fecha = Date.now().toString(36);
+
+    return random + fecha;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -28,7 +37,8 @@ const Formulario = ({setPacientes, pacientes}) => {
       propietario,
       email,
       alta,
-      sintomas
+      sintomas,
+      id: generarID()
     }
 
     // !Antes de gurdar nuestro Objeto en el state de APP tenemos que hacer una copia con el Spread Operator, de lo que ya esta en el estado
