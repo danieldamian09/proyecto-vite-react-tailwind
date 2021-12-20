@@ -56,8 +56,8 @@ const Formulario = ({setPacientes, pacientes}) => {
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-10 mx-5">
 
-          {/* Mostar el error en caso de que sea true */}
-          {error && <Error message={"Todos los campos son obligatorios"} />}
+          {/* Mostar el error en caso de que sea true || envie como prop {children} al componente de Error de esta forma puedo enviar mas contenido HTML */}
+          {error && <Error><p>Todos los campos son obligatorios</p></Error>}
         <div className="mb-5">
           <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">Nombre Masctota</label>
 
