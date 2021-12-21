@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from "./components/Header"
 import Formulario from "./components/Formulario"
 import ListadoPacientes from "./components/ListadoPacientes"
+import Paciente from './components/Paciente';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
       <Formulario  
         pacientes={pacientes}  
         setPacientes={setPacientes}
+        // enviamos el paciente que se va a modificar con el boton editar al formulario
+        paciente={paciente}
       />
 
       <ListadoPacientes

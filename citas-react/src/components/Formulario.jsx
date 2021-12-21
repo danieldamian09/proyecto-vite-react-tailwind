@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Error from './Error';
 
-const Formulario = ({setPacientes, pacientes}) => {
+const Formulario = ({setPacientes, pacientes, paciente}) => {
 
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
@@ -10,6 +10,10 @@ const Formulario = ({setPacientes, pacientes}) => {
   const [sintomas, setSintomas] = useState('');
   // Estado para el error del formulario
   const [error, setError] = useState(false)
+
+  useEffect(() => {
+    
+  }, [])
 
 
   // Funcion para generar un ID
