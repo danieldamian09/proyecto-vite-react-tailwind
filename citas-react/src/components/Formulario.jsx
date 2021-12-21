@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Error from './Error';
+import Paciente from './Paciente';
 
 const Formulario = ({setPacientes, pacientes, paciente}) => {
 
@@ -12,8 +13,21 @@ const Formulario = ({setPacientes, pacientes, paciente}) => {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    
-  }, [])
+
+    // Comprobamos si el objeto tiene algo con el siguiente if
+    if(Object.keys(paciente).length > 0){
+
+      // console.log("tenemos paciente")
+      // Seteamos cada uno de los valores de los campos del formulario para despues modificarlos con el boton guardar(actualmente esta agregar paciente)
+      setNombre(paciente.nombre);
+      setPropietario(paciente.propietario);
+      setEmail(paciente.email);
+      setAlta(paciente.alta);
+      setSintomas(paciente.sintomas);
+
+    }
+
+  }, [paciente])
 
 
   // Funcion para generar un ID
