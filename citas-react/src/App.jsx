@@ -6,6 +6,8 @@ import ListadoPacientes from "./components/ListadoPacientes"
 function App() {
 
   const [pacientes, setPacientes] = useState([]);
+  // ?Creamos el estado que nos va a permitir modificar cada uno de los regitros 
+  const [paciente, setPaciente] = useState({});
 
   // console.log(pacientes)
 
@@ -22,6 +24,7 @@ function App() {
 
       <ListadoPacientes
         pacientes={pacientes}
+        setPaciente={setPaciente}
       />
 
       </div>

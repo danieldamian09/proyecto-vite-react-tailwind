@@ -1,8 +1,9 @@
 import Paciente from "./Paciente";
 
-const ListadoPacientes = ({ pacientes }) => {
+const ListadoPacientes = ({ pacientes, setPaciente }) => {
+
   // podemos usar esta sintaxis para escribir lo que seria un condicional
-  console.log(pacientes && pacientes.length);
+  // console.log(pacientes && pacientes.length);
 
   return (
     <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
@@ -17,7 +18,11 @@ const ListadoPacientes = ({ pacientes }) => {
           </p>
 
           {pacientes.map((paciente) => (
-            <Paciente key={paciente.id} paciente={paciente} />
+            <Paciente 
+              key={paciente.id} 
+              paciente={paciente} 
+              setPaciente={setPaciente}  
+            />
           ))}
         </>
       ) : (
