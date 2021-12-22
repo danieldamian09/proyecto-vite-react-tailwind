@@ -155,7 +155,8 @@ const Formulario = ({setPacientes, pacientes, paciente}) => {
 
         <input 
           type="submit" 
-          value="Agregar Paciente"
+          // Operador ternario para determinar que texto le agrego al boton del formulario segun la accion que quiero hacer
+          value={paciente.id ? 'Guardar Paciente' : 'Agregar Paciente'}
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all" 
         />
 
