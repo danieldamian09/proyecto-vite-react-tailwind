@@ -55,12 +55,32 @@ const Formulario = ({setPacientes, pacientes, paciente}) => {
       propietario,
       email,
       alta,
-      sintomas,
-      id: generarID()
+      sintomas
     }
 
-    // !Antes de gurdar nuestro Objeto en el state de APP tenemos que hacer una copia con el Spread Operator, de lo que ya esta en el estado
+    //? Si existe en el Objeto de Paciente un ID quiere decir que estamos Editando eso por que este paciente(solo) viene desde nuestro componente APP para ser editado, de lo contario si no esta este atributo ID quiere decir que es un paciente nuevo 
+    //? if (paciente.id) {
+    //?  console.log("Editando")
+    //? }else{
+    //?   console.log("Nuevo Registro")
+    //? }
+
+    if (paciente.id) {
+
+      // Editando el registro
+      console.log(objetoPaciente);
+
+    } else {
+
+      // Nuevo registro genero el ID solo cuando es uno nuevo antes de almacenarlo en el state de todos los pacientes 
+      objetoPaciente.id = generarID()
+      // Antes de gurdar nuestro Objeto en el state de APP tenemos que hacer una copia con el Spread Operator, de lo que ya esta en el estado
     setPacientes([...pacientes, objetoPaciente])
+
+    }
+
+
+    
 
     // Reiniciar el Formulario
     setNombre('');
