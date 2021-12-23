@@ -23,6 +23,7 @@ function App() {
         setPacientes={setPacientes}
         // enviamos el paciente que se va a modificar con el boton editar al formulario
         paciente={paciente}
+        setPaciente={setPaciente}
       />
 
       <ListadoPacientes

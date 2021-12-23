@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Error from './Error';
 import Paciente from './Paciente';
 
-const Formulario = ({setPacientes, pacientes, paciente}) => {
+const Formulario = ({setPacientes, pacientes, paciente, setPaciente}) => {
 
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
@@ -67,14 +67,25 @@ const Formulario = ({setPacientes, pacientes, paciente}) => {
 
     if (paciente.id) {
 
-      // Editando el registro
+      //! Editando el registro
+      objetoPaciente.id = paciente.id;
+      //! Version actualizada del Objeto (PACIENTE) que estamos leyendo del State
       console.log(objetoPaciente);
+      //! Version vieja del Objeto (PACIENTE) que viene de la funcion que esta en el boton editar
+      console.log(paciente)
+
+      //! vamos a recorrer con un map todos los pacientes y vamos a identificar que registro es el que estamos editando con el id
+      //! verifico si el id del paciente que esta en mi estado es igual al id del paciente que quiero editar (viene de la funcion del boton editar)
+      const pacientesActualizado = pacientes.map( pacienteState => pacienteState.id === paciente.id ? objetoPaciente : pacienteState)
+      setPacientes(pacientesActualizado)
+      //! actualizamdos de nuestro estado de paciente(donde esta el que elegimos para modificar) puedes comentar la siguiente linea para validar
+      setPacientes({})
 
     } else {
 
-      // Nuevo registro genero el ID solo cuando es uno nuevo antes de almacenarlo en el state de todos los pacientes 
+      //! Nuevo registro genero el ID solo cuando es uno nuevo antes de almacenarlo en el state de todos los pacientes 
       objetoPaciente.id = generarID()
-      // Antes de gurdar nuestro Objeto en el state de APP tenemos que hacer una copia con el Spread Operator, de lo que ya esta en el estado
+      //! Antes de gurdar nuestro Objeto en el state de APP tenemos que hacer una copia con el Spread Operator, de lo que ya esta en el estado
     setPacientes([...pacientes, objetoPaciente])
 
     }
