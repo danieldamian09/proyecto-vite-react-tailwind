@@ -10,7 +10,10 @@ function App() {
   // ?Creamos el estado que nos va a permitir modificar cada uno de los regitros 
   const [paciente, setPaciente] = useState({});
 
-  // console.log(pacientes)
+  const eliminarPaciente = id => {
+    const pacientesActualizado = pacientes.filter(paciente => paciente.id !== id)
+    setPacientes(pacientesActualizado)
+  }
 
   return (
     <div className="container mx-auto mt-20">
@@ -29,6 +32,7 @@ function App() {
       <ListadoPacientes
         pacientes={pacientes}
         setPaciente={setPaciente}
+        eliminarPaciente={eliminarPaciente}
       />
 
       </div>

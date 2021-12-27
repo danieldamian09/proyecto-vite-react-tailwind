@@ -1,6 +1,6 @@
 import Paciente from "./Paciente";
 
-const ListadoPacientes = ({ pacientes, setPaciente }) => {
+const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => {
 
   // podemos usar esta sintaxis para escribir lo que seria un condicional
   // console.log(pacientes && pacientes.length);
@@ -21,7 +21,8 @@ const ListadoPacientes = ({ pacientes, setPaciente }) => {
             <Paciente 
               key={paciente.id} 
               paciente={paciente} 
-              setPaciente={setPaciente}  
+              setPaciente={setPaciente}
+              eliminarPaciente={eliminarPaciente}  
             />
           ))}
         </>
