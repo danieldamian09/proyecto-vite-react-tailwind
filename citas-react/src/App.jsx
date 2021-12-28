@@ -10,6 +10,11 @@ function App() {
   // ?Creamos el estado que nos va a permitir modificar cada uno de los regitros 
   const [paciente, setPaciente] = useState({});
 
+  // guardar pacientes en el localStorage
+  useEffect(() => {
+    localStorage.setItem('pacientes', JSON.stringify(pacientes))
+  }, [pacientes])
+
   const eliminarPaciente = id => {
     const pacientesActualizado = pacientes.filter(paciente => paciente.id !== id)
     setPacientes(pacientesActualizado)
