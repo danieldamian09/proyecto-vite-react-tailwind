@@ -70,16 +70,16 @@ const Formulario = ({setPacientes, pacientes, paciente, setPaciente}) => {
       //! Editando el registro
       objetoPaciente.id = paciente.id;
       //! Version actualizada del Objeto (PACIENTE) que estamos leyendo del State
-      console.log(objetoPaciente);
+      //console.log(objetoPaciente);
       //! Version vieja del Objeto (PACIENTE) que viene de la funcion que esta en el boton editar
-      console.log(paciente)
+      //console.log(paciente)
 
       //! vamos a recorrer con un map todos los pacientes y vamos a identificar que registro es el que estamos editando con el id
       //! verifico si el id del paciente que esta en mi estado es igual al id del paciente que quiero editar (viene de la funcion del boton editar)
       const pacientesActualizado = pacientes.map( pacienteState => pacienteState.id === paciente.id ? objetoPaciente : pacienteState)
       setPacientes(pacientesActualizado)
       //! actualizamdos de nuestro estado de paciente(donde esta el que elegimos para modificar) puedes comentar la siguiente linea para validar
-      setPacientes({})
+      setPaciente({})
 
     } else {
 
@@ -89,7 +89,6 @@ const Formulario = ({setPacientes, pacientes, paciente, setPaciente}) => {
     setPacientes([...pacientes, objetoPaciente])
 
     }
-
 
     
 

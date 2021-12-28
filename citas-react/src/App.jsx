@@ -10,10 +10,24 @@ function App() {
   // ?Creamos el estado que nos va a permitir modificar cada uno de los regitros 
   const [paciente, setPaciente] = useState({});
 
-  // guardar pacientes en el localStorage
+  // !el orden en el cual defino los useEffect es en el que se van a Ejecutar
+  useEffect(() => {
+    const obtnerLS = () => {
+      const pacientesLS = JSON.parse(localStorage.getItem('pacientes')) ?? [];
+
+      setPacientes(pacientesLS);
+    }
+
+    obtnerLS()
+  }, [])
+
+  
+  // !guardar pacientes en el localStorage (detectar los cambios, es decir sincroniza)
   useEffect(() => {
     localStorage.setItem('pacientes', JSON.stringify(pacientes))
+    
   }, [pacientes])
+
 
   const eliminarPaciente = id => {
     const pacientesActualizado = pacientes.filter(paciente => paciente.id !== id)
